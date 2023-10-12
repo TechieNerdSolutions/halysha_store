@@ -1,0 +1,25 @@
+{% extends 'core/base.html' %}
+
+{% block title %}Welcome{% endblock %}
+
+{% block content %}
+<header class="px-6 py-10 lg:py-20 bg-purple-500">
+    <div class="max-w-3xl mx-auto text-center">
+        <p class="mb-2 text-3xl lg:text-5xl text-white">Welcome to Halysha Store</p>
+        <p class="mb-10 text-white">At Halysha Store, we offer a wide range of high-quality products for the modern home. Our carefully curated selection includes stylish furniture, trendy home decor, state-of-the-art appliances, and much more. Whether you're looking to upgrade your living room, revamp your kitchen, or create a cozy bedroom retreat, we have the perfect items to suit your taste and enhance your living space.</p>
+        <p class="mb-10 text-white">Explore our collections and discover the latest in home design and functionality. From chic sofas and elegant dining sets to innovative gadgets and smart home solutions, we have something for every room and every lifestyle. Our team is dedicated to providing excellent customer service, ensuring you have a seamless shopping experience from browsing to delivery.</p>
+        <p class="mb-10 text-white">Transform your home with our exceptional products and let your living space reflect your unique style and personality. Thank you for choosing Halysha Store, where modern living meets affordability and quality. Happy shopping!</p>
+
+
+    <a href="{% url 'shop' %}" class="inline-block px-8 py-4 rounded-xl bg-white text-purple-500 hover:bg-gray-200">Start shopping</a>
+    </div>
+</header>
+
+<div class="max-w-6xl mx-auto py-2 px-6 xl:px-0">
+    <div class="products flex items-center flex-wrap">
+        {% for product in products %}
+            {% include 'product/partials/product_list_item.html' %}
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
